@@ -1,0 +1,35 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+!function(e){var t="https://web.archive.org/web/20180213083800/https://app.sharpspring.com/webforms/receivePostback/",n="",o=document.forms,r={},u=0,i=null,a=!1,s=!1,c=null,l=!1,f={},m=/\[([^\[]*)\]/g;if(!window.__ss_noform||!__ss_noform.version){var d=function(){window.console&&window.console.warn&&console.warn("form err",arguments),window.__ss_noform&&window.__ss_noform.errs&&window.__ss_noform.errs.push(arguments)},p=function(e){if(e&&e.submit){"function"==typeof e.submit?e.submit():document.createElement("form").submit.apply(e)}},h=function(e,t,n){if(!l){var o=!0;if("function"==typeof i&&!s)try{o=i(n)}catch(e){d("validation",e)}(o||void 0===o)&&p(t)}},y=function(e){var t=!1;switch(e.type){case"radio":case"checkbox":e.checked&&(t=e.value);break;default:t=e.value}return t},b=function(e){if(!e)return null;var t=document.cookie.match("(^|;) ?"+e+"=([^;]*)(;|$)");return t?decodeURIComponent(t[2]):null},v=function(e,o,r,u){var a=u||c;try{if(e&&"function"==typeof e.preventDefault&&e.preventDefault(),s&&"function"==typeof i&&!i(e))return!1;(!a||e&&e.currentTarget&&"FORM"===e.currentTarget.tagName.toUpperCase())&&(a=e.currentTarget);var p,v,_,g,w=[],k=!1,E=[],T=null,A=!1,C={},I=b("__ss_tk");for(v=0;v<a.elements.length;v++)if(T=a.elements[v],A=!1,T.name&&!f.hasOwnProperty(T.name)&&"password"!=T.type){switch(p=T.name.replace(m,"_$1"),C[p]||(C[p]=[]),T.nodeName){case"INPUT":if(!1===(k=y(T)))continue;break;case"SELECT":if(T.multiple)for(E=[],A=!0,_=0;_<T.length;_++)T[_].selected&&E.push(encodeURIComponent(T[_].value));else k=T.value;break;case"TEXTAREA":k=T.value}k&&C[p].push(A?E.join(","):encodeURIComponent(k))}for(g in C)w.push(g+"="+C[g].join(","));I&&I.length&&w.push("trackingid__sb="+I);var B=!1,R=document.getElementsByTagName("head")[0]||document.documentElement,U=document.createElement("script");return"default"===r&&(r=n),U.src=t+r+"/jsonp/?"+w.join("&"),U.onload=U.onreadystatechange=function(t){B||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState||(l||setTimeout(function(){h(0,a,e)},500),"function"==typeof o&&o(a),B=!0)},R.insertBefore(U,R.firstChild),!1}catch(e){if(a){var N=""+e,P=document.createElement("input");e.stack&&(N+=" :: "+e.stack),P.setAttribute("type","hidden"),P.setAttribute("name","_ss_error"),P.setAttribute("class","ss_error"),P.setAttribute("value",encodeURIComponent(N)),a.appendChild(P)}return d(e,a,P),!0}},_=function(e,t){var n,o,s,f;if("string"==typeof e?(f=document.getElementById(e))&&(e=f):f=e,f){for(n=e.getElementsByTagName("input"),o=0;o<n.length;o++)"submit"===n[o].type&&n[o].onclick&&(i=n[o].onclick,n[o].onclick=null,a=!0),"submit"===n[o].type&&n[o].name&&((s=document.createElement("input")).setAttribute("type","hidden"),s.setAttribute("name",n[o].name),s.setAttribute("value",n[o].value),e.appendChild(s));for(n=e.getElementsByTagName("button"),o=0;o<n.length;o++)"submit"===n[o].type&&n[o].onclick&&(i=n[o].onclick,n[o].onclick=null,a=!0);l||("function"==typeof e.onsubmit&&(i=e.onsubmit,e.onsubmit=null,a=!0),e.onsubmit=function(n){v(n,null,t,e)}),t&&(r[t]=e),t&&"default"!==t||(c=e),u++}else d("missing form",e)},g={baseURI:function(e){return t=e,!0},endpoint:function(e,t){return t?_(t,e):n=e,!0},validate:function(e){return i=e,s=!0,!0},submitType:function(e){return"manual"===e?(c&&(c.onsubmit=null),l=!0):l=!1,!0},form:function(e,t){return _(e,t||"default"),!0},submit:function(e,t){var o=c;if(t=t||"default",r[t]){var u=r[t]&&r[t].id;o=u&&document.getElementById(u)}return o&&v({currentTarget:o},e,t||n),!0},submitButton:function(e){return!0},exclude:function(e){if(e&&"string"==typeof e)f[e]=1;else if(e&&e.length)for(var t in e)e.hasOwnProperty(t)&&(f[e[t]]=1)}},w=function(e){var t;try{for(;t=e.pop();)g.hasOwnProperty(t[0])&&"function"==typeof g[t[0]]&&g[t[0]].apply(g[t[0]],t.slice(1))}catch(e){d("setup",e)}return e.length};window.__ss_noform={version:"1.24",push:function(e){return w([e])},errs:[]},function(){w(e);var t,r,i=n;if(i||(i="default"),!(u>0||c))for(r=0;r<o.length;r++)if("post"===(t=o[r]).method){_(t,i);break}}()}}(__ss_noform);
+
+}
+/*
+     FILE ARCHIVED ON 08:38:00 Feb 13, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:53:12 Jun 04, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 162.617
+  exclusion.robots: 0.118
+  exclusion.robots.policy: 0.106
+  cdx.remote: 0.075
+  esindex: 0.011
+  LoadShardBlock: 120.657 (3)
+  PetaboxLoader3.datanode: 134.766 (4)
+  load_resource: 201.102
+  PetaboxLoader3.resolve: 53.133
+*/
